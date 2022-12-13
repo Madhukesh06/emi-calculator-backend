@@ -5,7 +5,7 @@ const app = express();
 app.get("/calculateemi", async (req, res) => {
   const { principle, annualrate, tenure } = req.body;
   const rate = annualrate / 12 / 100;
-  const n = 12 * tenure;
+  const n = tenure;
   try {
     const EMI = await Math.ceil(
       (principle * rate * (1 + rate) ** n) / ((1 + rate) ** n - 1)
