@@ -2,7 +2,7 @@ const express = require("express");
 
 const app = express();
 
-app.get("/calculateemi", async (req, res) => {
+app.post("/calculateemi", async (req, res) => {
   const { principle, annualrate, tenure } = req.body;
   const rate = annualrate / 12 / 100;
   const n = tenure;
